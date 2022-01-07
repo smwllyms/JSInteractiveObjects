@@ -14,7 +14,7 @@
 
     </div>
     <div id="devEnvironment">
-
+        <a onclick="toggleEdit()">Click to toggle edit</a>
     </div>
 </body>
 </html>
@@ -26,6 +26,11 @@
     let obj = document.createElement("div");
     obj.classList.add("testObj");
     nodeEnvironment.appendChild(obj);
-    let interactiveObj = new InteractiveObject(obj, nodeEnvironment);
+    let interactiveObj = new InteractiveObject(obj, true, true, nodeEnvironment);
+
+    const toggleEdit = function() {
+        interactiveObj.toggleEdit();
+    }
+    window.toggleEdit = toggleEdit;
 
 </script>
